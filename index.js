@@ -47,7 +47,7 @@ app.get('/api/projects', (request, response) => {
 
 app.delete('/api/projects/:id', (request, response, next) => {
   Project.findByIdAndRemove(request.params.id)
-    .then(result => {
+    .then(() => {
       response.status(204).end()
     })
     .catch(error => next(error))
@@ -62,7 +62,7 @@ app.get('/api/projects/:id', (request, response, next) => {
         response.status(404).end()
       }
     })
-    .catch(error => error => next(error))
+    .catch( () => error => next(error))
 })
 
 app.put('/api/projects/:id', (request, response, next) => {

@@ -10,7 +10,9 @@
     "build:ui": "rm -rf build && cd ../frontend/ && npm run build && cp -r build ../backend",
     "deploy": "git push heroku main",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",
-    "logs:prod": "heroku logs --tail"
+    "logs:prod": "heroku logs --tail",
+
+    "lint": "eslint ."
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +23,14 @@
     "mongoose": "^6.5.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "eslint": "^8.22.0",
+    "eslint-config-standard-with-typescript": "^22.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.30.1",
+    "nodemon": "^2.0.19",
+    "typescript": "^4.7.4"
   }
 }
