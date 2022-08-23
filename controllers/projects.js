@@ -25,8 +25,10 @@ projectsRouter.post('/', (request, response, next) => {
   const project = {
     title: body.title,
     content: body.content,
-    start_date: body.start_date,
-    end_date: body.end_date,
+    time: body.time,
+    imgLink: body.imgLink,
+    srcLink: body.srcLink,
+    viewsLink: body.viewsLink,
   }
 
   project.save()
@@ -45,11 +47,11 @@ projectsRouter.delete('/:id', (request, response, next) => {
 })
 
 projectsRouter.put('/:id', (request, response, next) => {
-  const { title, content, start_date, end_date } = request.body
+  const { title, content, time, imgLink, srcLink, viewsLink } = request.body
 
   Project.findByIdAndUpdate(
     request.params.id,
-    { title, content, start_date, end_date },
+    { title, content, time, imgLink, srcLink, viewsLink },
     { new: true, runValidators: true, context: 'query' }
   )
     .then(updatedProject => {

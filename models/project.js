@@ -6,8 +6,12 @@ const projectSchema = new mongoose.Schema({
     required: true,
   },
   content: String,
-  start_date: Date,
-  end_date: Date,
+  role: Array,
+  time: String,
+  imgLink: String,
+  srcLink: String,
+  viewsLink: String,
+  techStack: Array,
 })
 
 projectSchema.set('toJSON', {
