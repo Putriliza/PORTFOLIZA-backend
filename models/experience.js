@@ -10,8 +10,11 @@ const experienceSchema = new mongoose.Schema({
     required: true,
   },
   content: String,
+  role: Array,
   time: String,
-  photoUrl: String,
+  imgLink: String,
+  igLink: String,
+  webLink: String,
 })
 
 experienceSchema.set('toJSON', {

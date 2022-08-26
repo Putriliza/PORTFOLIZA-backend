@@ -1,0 +1,2 @@
+.navbar{background-color:#fffaf0;display:flex;justify-content:space-between;padding:0;position:-webkit-sticky;position:sticky;top:0;width:100%;z-index:10}.navbar-collapse{align-items:flex-start}.show .offcanvas-body{display:flex;flex-direction:column}@media (min-width:992px){.navbar-expand-lg .offcanvas-body{justify-content:flex-end}}.navbar-toggler-icon{height:1em;margin:2px;width:1em}a{color:#000;cursor:pointer}button:hover a{color:#8a2be2}button a.active{background-color:#fff;color:#8a2be2}
+/*# sourceMappingURL=main.ad9c3f2d.css.map*/

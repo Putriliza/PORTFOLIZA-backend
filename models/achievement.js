@@ -12,7 +12,8 @@ const achievementSchema = new mongoose.Schema({
   organizer: String,
   content: String,
   date: Date,
-  photoUrl: String,
+  imgLink: String,
+  techStack: Array,
 })
 
 achievementSchema.set('toJSON', {

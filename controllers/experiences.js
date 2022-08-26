@@ -26,8 +26,11 @@ experiencesRouter.post('/', (request, response, next) => {
     position: body.position,
     organization: body.organization,
     content: body.content,
+    role: body.role,
     time: body.time,
-    photoUrl: body.photoUrl,
+    imgLink: body.imgLink,
+    igLink: body.igLink,
+    webLink: body.webLink,
   }
 
   experience.save()
@@ -46,11 +49,11 @@ experiencesRouter.delete('/:id', (request, response, next) => {
 })
 
 experiencesRouter.put('/:id', (request, response, next) => {
-  const { position, organization, content, time, photoUrl } = request.body
+  const { position, organization, content, role, time, imgLink, igLink, webLink } = request.body
 
   Experience.findByIdAndUpdate(
     request.params.id,
-    { position, organization, content, time, photoUrl },
+    { position, organization, content, role, time, imgLink, igLink, webLink },
     { new: true, runValidators: true, context: 'query' }
   )
     .then(updatedExperience => {

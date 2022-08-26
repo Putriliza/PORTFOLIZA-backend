@@ -28,7 +28,8 @@ achievementsRouter.post('/', (request, response, next) => {
     organizer: body.organizer,
     content: body.content,
     date: body.date,
-    photoUrl: body.photoUrl,
+    imgLink: body.imgLink,
+    techStack: body.techStack,
   }
 
   achievement.save()
@@ -47,11 +48,11 @@ achievementsRouter.delete('/:id', (request, response, next) => {
 })
 
 achievementsRouter.put('/:id', (request, response, next) => {
-  const { position, event, organizer, content, date, photoUrl } = request.body
+  const { position, event, organizer, content, date, imgLink, techStack } = request.body
 
   Achievement.findByIdAndUpdate(
     request.params.id,
-    { position, event, organizer, content, date, photoUrl },
+    { position, event, organizer, content, date, imgLink, techStack },
     { new: true, runValidators: true, context: 'query' }
   )
     .then(updatedAchievement => {
